@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Tableau de bord des exports</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f9f9f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tableau de bord</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
+    .container {
+      text-align: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
 
-        .btn {
-            display: inline-block;
-            margin: 15px;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
 
-        .btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: #4f46e5;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #4338ca;
+    }
+
+    .emoji {
+      font-size: 1.4em;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
-
-    <h1>📊 Exports disponibles</h1>
-
-    <a class="btn" href="https://raw.githack.com/clemoup/CRELAM/main/export_toutes_demandes.html" target="_blank">
-        Ensemble des demandes avec leur état avancement
+  <div class="container">
+    <h1>📊 Tableau de bord des exports</h1>
+    <a href="export_toutes_les_demandes.html" class="btn">
+      <span class="emoji">🏗️</span> Avancement de toutes les demandes
     </a>
-
-    <a class="btn" href="https://raw.githack.com/clemoup/CRELAM/main/export_demandes_sans_volontaires.html" target="_blank">
-        Demandes sans volontaires
+    <a href="export_demandes_sans_volontaires.html" class="btn">
+      <span class="emoji">🙋‍♂️</span> Demandes sans volontaires
     </a>
-
+  </div>
 </body>
 </html>
