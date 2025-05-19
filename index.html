@@ -66,6 +66,8 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       width: 320px;
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
       transition: transform 0.2s ease;
     }
 
@@ -76,9 +78,11 @@
     .card h2 {
       font-size: 1.5rem;
       color: #1e3a8a;
+      margin-top: 0;
     }
 
     .card p {
+      flex-grow: 1;
       margin: 1rem 0;
     }
 
@@ -91,6 +95,7 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      margin-top: auto;
     }
 
     .btn:hover {
@@ -117,6 +122,14 @@
       background: #e2e8f0;
       margin-top: 3rem;
     }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+      }
+    }
   </style>
 </head>
 <body>
@@ -138,20 +151,14 @@
 
   <main class="container" id="outils">
     <section class="card">
-      <h2>🔧 Demandes ouvertes</h2>
-      <p>Consultez les demandes en cours de réalisation ainsi que leur état d'avancement.</p>
+      <h2>🔧 Export Chantiers</h2>
+      <p>Générez et consultez les exports HTML de vos chantiers selon leur statut et leur type.</p>
       <a class="btn" href="export_chantiers_ouverts.html">Voir les chantiers</a>
     </section>
 
     <section class="card">
       <h2>🧩 Demandes sans volontaires</h2>
-      <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires.</p>
-      <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
-    </section>
-
-      <section class="card">
-      <h2>🗃️ Toutes les demandes</h2>
-      <p>Consultez l'ensemble des demandes exprimées par les enseignants.</p>
+      <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
       <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
     </section>
   </main>
@@ -175,7 +182,7 @@
   </section>
 
   <footer>
-    © 2025 - Crelink
+    © 2025 - Mon Index GitHub
   </footer>
 
 </body>
