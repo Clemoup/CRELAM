@@ -3,61 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mon index GitHub</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Index GitHub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    nav {
+      background-color: #1e3a8a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-left img {
+      height: 40px;
+      width: auto;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #3b82f6;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      color: #1e3a8a;
+      margin: 0 0 1rem 0;
+    }
+
+    .card p {
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin-top: 1.5rem;
+      align-self: flex-start;
+    }
+
+    .btn:hover {
+      background-color: #3749b3;
+    }
+
+    section.info-block {
+      padding: 3rem 2rem;
+      background: #ffffff;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    section.info-block h2 {
+      color: #1e3a8a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e2e8f0;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo-menu">
-        <img src="assets/logo_école.png" alt="Logo école" class="logo" />
-        <h1>Mon index GitHub</h1>
-      </div>
-      <nav>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <ul class="menu">
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#apropos">À propos</a></li>
-          <li><a href="#actus">Actualités</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+  <nav>
+    <div class="nav-left">
+      <img src="logo_école.png" alt="Logo école" />
+      <h1>Mon Index GitHub</h1>
     </div>
+    <ul>
+      <li><a href="#outils">Outils</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#actus">Actualités</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>Bienvenue sur mon index GitHub</h2>
+    <p>Accédez rapidement à vos outils et ressources</p>
   </header>
 
-  <main>
-    <section id="accueil" class="cards">
-      <div class="card">
-        <h2>Mon projet 1</h2>
-        <p>Une brève description du projet.</p>
-        <a href="#" class="btn">Voir plus</a>
+  <main class="container" id="outils">
+    <section class="card">
+      <div class="card-content">
+        <h2>🔧 Export Chantiers</h2>
+        <p>Générez et consultez les exports HTML de vos chantiers selon leur statut et leur type.</p>
       </div>
-      <div class="card">
-        <h2>Un projet avec un nom plus long</h2>
-        <p>Une autre brève description avec plus de texte pour tester l’alignement.</p>
-        <a href="#" class="btn">Voir plus</a>
+      <a class="btn" href="export_chantiers_ouverts.html">Voir les chantiers</a>
+    </section>
+
+    <section class="card">
+      <div class="card-content">
+        <h2>🧩 Demandes sans volontaires</h2>
+        <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
       </div>
-    </section>
-
-    <section id="apropos">
-      <h2>À propos</h2>
-      <p>Cette page présente mes projets hébergés sur GitHub avec une interface moderne.</p>
-    </section>
-
-    <section id="actus">
-      <h2>Actualités</h2>
-      <p>Restez informé des dernières mises à jour de mes projets et contributions.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Pour me contacter, utilisez GitHub ou envoyez un email à contact@exemple.com</p>
+      <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
     </section>
   </main>
 
+  <section class="info-block" id="apropos">
+    <h2>À propos</h2>
+    <p>Ce site centralise les outils développés pour la coordination des chantiers, des demandes de bénévoles et des suivis de projets. L’objectif est de faciliter l'accès, la lisibilité et le partage d’informations à jour.</p>
+  </section>
+
+  <section class="info-block" id="actus">
+    <h2>Actualités</h2>
+    <ul>
+      <li><strong>19 mai 2025 :</strong> Ajout de cette nouvelle interface avec navigation et sections !</li>
+      <li><strong>15 mai 2025 :</strong> Refonte de l’export des demandes sans volontaires.</li>
+    </ul>
+  </section>
+
+  <section class="info-block" id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute suggestion, question ou bug à signaler, contactez-moi à : <a href="mailto:votremail@example.com">votremail@example.com</a></p>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Mon index GitHub</p>
+    © 2025 - Mon Index GitHub
   </footer>
+
 </body>
 </html>
