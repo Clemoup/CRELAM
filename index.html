@@ -1,53 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>CRELAM – Tableau de bord</title>
-    <style>
-        body {
-            font-family: Roboto, sans-serif;
-            background: #f7f9fc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index - Accueil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
 
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-        }
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
 
-        .button-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-        .btn {
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-        }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
 
-        .btn:hover {
-            background-color: #357ABD;
-        }
-    </style>
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      color: #1e3a8a;
+    }
+
+    .card p {
+      margin: 1rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #3749b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e2e8f0;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>CRELAM – Tableau de bord</h1>
-    <div class="button-container">
-        <a href="export_toutes_demandes.html" class="btn"> 🗃️ Toutes les demandes</a>
-        <a href="export_demandes_sans_volontaires.html" class="btn">📢 Demandes sans volontaires</a>
-    </div>
+  <header>
+    <h1>Bienvenue sur mon index GitHub</h1>
+    <p>Choisissez une section pour continuer</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>🔧 Export Chantiers</h2>
+      <p>Générez et consultez les exports HTML de vos chantiers selon leur statut et leur type.</p>
+      <a class="btn" href="export_toutes_demandes.html.html">Voir les chantiers</a>
+    </section>
+
+    <section class="card">
+      <h2>🧩 Demandes sans volontaires</h2>
+      <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
+      <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 - Mon Index GitHub
+  </footer>
 </body>
 </html>
+
+
