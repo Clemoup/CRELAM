@@ -20,6 +20,18 @@
       justify-content: space-between;
       align-items: center;
       color: white;
+      flex-wrap: wrap;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-left img {
+      height: 40px;
+      width: auto;
     }
 
     nav h1 {
@@ -68,22 +80,23 @@
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    .card-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .card h2 {
       font-size: 1.5rem;
       color: #1e3a8a;
-      margin-top: 0;
+      margin: 0 0 1rem 0;
     }
 
     .card p {
+      margin: 0;
       flex-grow: 1;
-      margin: 1rem 0;
     }
 
     .btn {
@@ -95,7 +108,8 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background-color 0.3s ease;
-      margin-top: auto;
+      margin-top: 1.5rem;
+      align-self: flex-start;
     }
 
     .btn:hover {
@@ -135,7 +149,10 @@
 <body>
 
   <nav>
-    <h1>Mon Index GitHub</h1>
+    <div class="nav-left">
+      <img src="Capture d'écran 2025-05-19 230119.png" alt="Logo école" />
+      <h1>Mon Index GitHub</h1>
+    </div>
     <ul>
       <li><a href="#outils">Outils</a></li>
       <li><a href="#apropos">À propos</a></li>
@@ -151,14 +168,18 @@
 
   <main class="container" id="outils">
     <section class="card">
-      <h2>🔧 Export Chantiers</h2>
-      <p>Générez et consultez les exports HTML de vos chantiers selon leur statut et leur type.</p>
+      <div class="card-content">
+        <h2>🔧 Export Chantiers</h2>
+        <p>Générez et consultez les exports HTML de vos chantiers selon leur statut et leur type.</p>
+      </div>
       <a class="btn" href="export_chantiers_ouverts.html">Voir les chantiers</a>
     </section>
 
     <section class="card">
-      <h2>🧩 Demandes sans volontaires</h2>
-      <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
+      <div class="card-content">
+        <h2>🧩 Demandes sans volontaires</h2>
+        <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
+      </div>
       <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
     </section>
   </main>
