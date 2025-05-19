@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index - Accueil</title>
+  <title>Index GitHub</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -13,16 +13,43 @@
       color: #333;
     }
 
-    header {
+    nav {
       background-color: #1e3a8a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: #3b82f6;
       color: white;
       padding: 2rem;
       text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
     }
 
     .container {
@@ -48,7 +75,6 @@
 
     .card h2 {
       font-size: 1.5rem;
-      margin-top: 0;
       color: #1e3a8a;
     }
 
@@ -71,38 +97,86 @@
       background-color: #3749b3;
     }
 
+    section.info-block {
+      padding: 3rem 2rem;
+      background: #ffffff;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    section.info-block h2 {
+      color: #1e3a8a;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       background: #e2e8f0;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
+
+  <nav>
+    <h1>Mon Index GitHub</h1>
+    <ul>
+      <li><a href="#outils">Outils</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#actus">Actualités</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <h1>Bienvenue sur mon index GitHub</h1>
-    <p>Choisissez une section pour continuer</p>
+    <h2>Bienvenue sur mon index GitHub</h2>
+    <p>Accédez rapidement à vos outils et ressources</p>
   </header>
 
-  <main class="container">
+  <main class="container" id="outils">
     <section class="card">
-      <h2>🔧 Export Chantiers</h2>
-      <p>Générez et consultez les exports HTML de vos chantiers selon leur statut et leur type.</p>
-      <a class="btn" href="export_toutes_demandes.html.html">Voir les chantiers</a>
+      <h2>🔧 Demandes ouvertes</h2>
+      <p>Consultez les demandes en cours de réalisation ainsi que leur état d'avancement.</p>
+      <a class="btn" href="export_chantiers_ouverts.html">Voir les chantiers</a>
     </section>
 
     <section class="card">
       <h2>🧩 Demandes sans volontaires</h2>
-      <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
+      <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires.</p>
+      <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
+    </section>
+
+      <section class="card">
+      <h2>🗃️ Toutes les demandes</h2>
+      <p>Consultez l'ensemble des demandes exprimées par les enseignants.</p>
       <a class="btn" href="export_demandes_sans_volontaires.html">Voir les demandes</a>
     </section>
   </main>
 
+  <section class="info-block" id="apropos">
+    <h2>À propos</h2>
+    <p>Ce site centralise les outils développés pour la coordination des chantiers, des demandes de bénévoles et des suivis de projets. L’objectif est de faciliter l'accès, la lisibilité et le partage d’informations à jour.</p>
+  </section>
+
+  <section class="info-block" id="actus">
+    <h2>Actualités</h2>
+    <ul>
+      <li><strong>19 mai 2025 :</strong> Ajout de cette nouvelle interface avec navigation et sections !</li>
+      <li><strong>15 mai 2025 :</strong> Refonte de l’export des demandes sans volontaires.</li>
+    </ul>
+  </section>
+
+  <section class="info-block" id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute suggestion, question ou bug à signaler, contactez-moi à : <a href="mailto:votremail@example.com">votremail@example.com</a></p>
+  </section>
+
   <footer>
-    © 2025 - Mon Index GitHub
+    © 2025 - Crelink
   </footer>
+
 </body>
 </html>
-
-
