@@ -103,7 +103,7 @@ nav {
   }
 }
 /* --- INFO BLOCK --- */
-.info.block {
+.info-section {
   background: #D2CCDA;
   padding: 1.5em;
   border-radius: 12px;
@@ -112,16 +112,20 @@ nav {
   max-width: 900px;
 }
 
-.info.block h2 {
+.info-section h2 {
   margin-top: 0;
   color: #7B4D72;
 }
 
-.info.block p {
+.info-section p {
   font-size: 1.1em;
   line-height: 1.6;
 }
 
+section:not(.card-container) {
+  display: block;
+  width: 100%;
+}
 
 
 /* --- MAIN LAYOUT --- */
