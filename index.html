@@ -5,9 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon index GitHub</title>
   <link rel="stylesheet" href="style.css" />
+
+<style>
+    #login-screen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #0077b6;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    #login-screen input {
+      padding: 0.5em;
+      font-size: 1rem;
+      margin-top: 1em;
+      border-radius: 5px;
+      border: none;
+    }
+    #login-screen button {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      font-size: 1rem;
+      background: white;
+      color: #0077b6;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    body.locked {
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body>
-  <header>
+<body class="locked">
+
+  <!-- Écran de connexion -->
+  <div id="login-screen">
+    <h2>Connexion requise 🔒</h2>
+    <input type="password" id="Ecole" placeholder="CRELINK2025">
+    <button onclick="checkPassword()">Se connecter</button>
+    <p id="error-msg" style="color: #ffb3b3; display: none;">Mot de passe incorrect.</p>
+  </div>
+
+  <!-- Contenu du site -->
+  <div id="main-content" style="display: none;">
+    <header>
       <div class="container header-content">
        <div class="logo-menu">
         <img src="assets/logo_école.png" alt="Logo école" class="logo" />
@@ -70,5 +116,24 @@
   <footer>
     <p>&copy; 2025 Mon index GitHub</p>
   </footer>
+  </div>
+
+  <!-- Script JS de vérification -->
+  <script>
+    const PASSWORD = "monmotdepasse"; // ← Change ce mot de passe ici
+
+    function checkPassword() {
+      const input = document.getElementById('password-input').value;
+      if (input === PASSWORD) {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        document.body.classList.remove("locked");
+      } else {
+        document.getElementById('error-msg').style.display = 'block';
+      }
+    }
+  </script>
+
+  
 </body>
 </html>
