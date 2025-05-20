@@ -3,146 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> CRELINK </title>
+  <title>CRELINK</title>
   <link rel="stylesheet" href="style.css" />
-
-<style>
-    #login-screen {
+  <style>
+    #acces-ecole-form {
+      display: none;
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #fffff;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      flex-direction: column;
-      font-family: 'Segoe UI', sans-serif;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 1.5em;
+      border: 2px solid #4B2F46;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 10000;
+      text-align: center;
     }
-    #login-screen input {
+    #acces-ecole-form input {
       padding: 0.5em;
-      font-size: 1rem;
       margin-top: 1em;
       border-radius: 5px;
-      border: none;
+      border: 1px solid #ccc;
     }
-    #login-screen button {
+    #acces-ecole-form button {
       margin-top: 1em;
       padding: 0.5em 1em;
-      font-size: 1rem;
-      background: white;
-      color: #4B2F46;
+      background: #4B2F46;
+      color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
-    body.locked {
-      overflow: hidden;
-    }
   </style>
 </head>
-<body class="locked">
+<body>
 
-  <!-- Écran de connexion -->
-  <div id="login-screen">
-    <h2>Connexion requise 🔒</h2>
-    <input type="password" id="password-input" placeholder="Mot de passe">
-    <button onclick="checkPassword()">Se connecter</button>
-    <p id="error-msg" style="color: #ffb3b3; display: none;">Mot de passe incorrect.</p>
-  </div>
-
-  <!-- Contenu du site -->
-  <div id="main-content" style="display: none;">
-    <header>
-      <div class="container header-content">
-       <div class="logo-menu">
-        <img src="assets/logo_école.png" alt="Logo école" class="logo" />
-        <h1> CRELINK </h1>
-      </div>
-      <nav>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <ul class="menu">
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#apropos">À propos</a></li>
-          <li><a href="#actus">Actualités</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<header>
+  <div class="container header-content">
+    <div class="logo-menu">
+      <img src="assets/logo_école.png" alt="Logo école" class="logo" />
+      <h1>CRELINK</h1>
     </div>
-  </header>
+    <nav>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <ul class="menu">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#actus">Actualités</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" id="acces-ecole-link">Accès École</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
 <main>
-    <section id="accueil" class="cards">
-<section class="card-container">
-
-  <div class="card">
-    <h2>🔧 Demandes en cours</h2>
-    <p>Consultez les demandes en cours selon leur statut d'avancement et leur type.</p>     
-    <a href="export_chantiers_ouverts.html" class="btn">Voir plus</a>
-  </div>
-
-  <div class="card">
-    <h2>🧩 Demandes sans volontaires</h2>
-    <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
-    <a href="export_demandes_sans_volontaires.html" class="btn">Voir plus</a>
-  </div>
-
-  <h2>🗃️ Toutes les demandes</h2>
-    <p>Consultez l'ensemble des demandes soumises au CRELAM, tout statut confondus.</p>     
-    <a href="export_toutes_demandes.html" class="btn">Voir plus</a>
-  </div>
-
-</section>
-
-
-<section class="info-section">
-  <h2>Informations utiles</h2>
-  <p>Cette page est à usage exclusif des enseignants et du CRELAM de l'Ecole Montessori de Rennes.</p>
+  <section id="accueil" class="cards">
+    <div class="card-container">
+      <div class="card">
+        <h2>🔧 Demandes en cours</h2>
+        <p>Consultez les demandes en cours selon leur statut d'avancement et leur type.</p>
+        <a href="export_chantiers_ouverts.html" class="btn">Voir plus</a>
+      </div>
+      <div class="card">
+        <h2>🧩 Demandes sans volontaires</h2>
+        <p>Consultez les demandes actives qui n'ont pas encore trouvé de volontaires disponibles.</p>
+        <a href="export_demandes_sans_volontaires.html" class="btn">Voir plus</a>
+      </div>
+      <div class="card">
+        <h2>🗃️ Toutes les demandes</h2>
+        <p>Consultez l'ensemble des demandes soumises au CRELAM, tout statut confondu.</p>
+        <a href="export_toutes_demandes.html" class="btn">Voir plus</a>
+      </div>
+    </div>
   </section>
-    
 
-<section id="apropos">
-      <h2>À propos</h2>
-      <p>Cette page présente les éléments de besoin soumis par les enseignants de l'école au CRELAM de manière actualisée en instantané quand leur traitement est enregistré dans l'outil CRELINK. </p>
-    </section>
+  <section class="info-section">
+    <h2>Informations utiles</h2>
+    <p>Cette page est à usage exclusif des enseignants et du CRELAM de l'Ecole Montessori de Rennes.</p>
+  </section>
 
-<section id="actus">
-      <h2>Actualités</h2>
-        <p>Restez informé des dernières mises à jour de mes projets et contributions.</p>
-        <ul>
-      <li><strong>19 mai 2025 :</strong> Ajout de cette nouvelle interface avec navigation et sections !</li>
-      <li><strong>15 mai 2025 :</strong> Refonte de l’export des demandes sans volontaires.</li>
-    </ul>    
-</section>
+  <section id="apropos">
+    <h2>À propos</h2>
+    <p>Cette page présente les éléments de besoin soumis par les enseignants de l'école au CRELAM, mis à jour en instantané via l’outil CRELINK.</p>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Pour me contacter, envoyez un email à contact@exemple.com</p>
-    </section>
+  <section id="actus">
+    <h2>Actualités</h2>
+    <ul>
+      <li><strong>19 mai 2025 :</strong> Nouvelle interface avec navigation !</li>
+      <li><strong>15 mai 2025 :</strong> Refonte des exports de demandes sans volontaires.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Pour me contacter : contact@exemple.com</p>
+  </section>
 </main>
 
-  <footer>
-    <p>&copy; 2025 CRELINK</p>
-  </footer>
-  </div>
+<footer>
+  <p>&copy; 2025 CRELINK</p>
+</footer>
 
-  <!-- Script JS de vérification -->
-  <script>
-    const PASSWORD = "CRELINK2025"; // ← Change ce mot de passe ici
+<!-- Mot de passe popup -->
+<div id="acces-ecole-form">
+  <h3>🔐 Accès réservé</h3>
+  <input type="password" id="ecole-password" placeholder="Mot de passe">
+  <br>
+  <button onclick="verifierMotDePasse()">Valider</button>
+  <p id="erreur-mdp" style="color: red; display: none;">Mot de passe incorrect.</p>
+</div>
 
-    function checkPassword() {
-      const input = document.getElementById('password-input').value;
-      if (input === PASSWORD) {
-        document.getElementById('login-screen').style.display = 'none';
-        document.getElementById('main-content').style.display = 'block';
-        document.body.classList.remove("locked");
-      } else {
-        document.getElementById('error-msg').style.display = 'block';
-      }
+<script>
+  const PASSWORD = "CRELINK2025";
+
+  document.getElementById("acces-ecole-link").addEventListener("click", function(e) {
+    e.preventDefault();
+    document.getElementById("acces-ecole-form").style.display = "block";
+  });
+
+  function verifierMotDePasse() {
+    const mdp = document.getElementById("ecole-password").value;
+    if (mdp === PASSWORD) {
+      window.location.href = "acces_ecole.html";
+    } else {
+      document.getElementById("erreur-mdp").style.display = "block";
     }
-  </script>
+  }
+</script>
 
-  
 </body>
 </html>
