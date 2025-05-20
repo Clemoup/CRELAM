@@ -122,9 +122,12 @@ nav {
   line-height: 1.6;
 }
 
-section:not(.card-container) {
-  display: block;
+/* --- ALIGNEMENT DES SECTIONS SIMPLES --- */
+section:not(.card-container):not(.info-section) {
   width: 100%;
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 0 1em;
 }
 
 
