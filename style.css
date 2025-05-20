@@ -2,7 +2,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: #f0f2f5;
+  background: #f2f2f2;
   color: #333;
 }
 
@@ -10,8 +10,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-
 
 /* --- HEADER --- */
 header {
@@ -40,20 +38,6 @@ header {
   height: 50px;
 }
 
-section.info-block {
-      padding: 3rem 2rem;
-      background: #ffffff;
-      max-width: 800px;
-      margin: auto;
-      margin-top: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    section.info-block h2 {
-      color: #1e3a8a;
-    }
-
 /* --- NAVIGATION --- */
 nav {
   position: relative;
@@ -73,7 +57,7 @@ nav {
   padding: 0.5em;
   transition: background 0.3s;
 }
--- Fond clair au survol du menu
+
 .menu li a:hover {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
@@ -117,7 +101,18 @@ main {
   padding: 0 1em;
 }
 
-/* --- CARD GRID --- */
+/* --- SECTIONS --- */
+section {
+  margin-top: 3em;
+}
+
+section h2 {
+  border-bottom: 2px solid #0077b6;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.8em;
+}
+
+/* --- CARDS / BLOCS --- */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -135,7 +130,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px;
+  min-height: 280px;
 }
 
 .card:hover {
@@ -147,6 +142,7 @@ main {
   margin-top: 0;
 }
 
+/* --- BOUTON --- */
 .btn {
   margin-top: auto;
   align-self: flex-start;
@@ -157,20 +153,9 @@ main {
   text-decoration: none;
   transition: background 0.3s;
 }
---  Couleur plus foncée au survol
+
 .btn:hover {
   background: #005f8a;
-}
-
-/* --- SECTIONS --- */
-section {
-  margin-top: 3em;
-}
---Titre souligné par une bordure élégante
-section h2 {
-  border-bottom: 2px solid #0077b6;
-  padding-bottom: 0.3em;
-  margin-bottom: 0.8em;
 }
 
 /* --- FOOTER --- */
