@@ -143,6 +143,12 @@ section h2 {
 }
 
 /* --- CARDS / BLOCS --- */
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
