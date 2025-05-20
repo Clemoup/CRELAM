@@ -46,7 +46,7 @@
   <!-- Écran de connexion -->
   <div id="login-screen">
     <h2>Connexion requise 🔒</h2>
-    <input type="password" id="Ecole" placeholder="CRELINK2025">
+    <input type="password" id="password-input" placeholder="Mot de passe">
     <button onclick="checkPassword()">Se connecter</button>
     <p id="error-msg" style="color: #ffb3b3; display: none;">Mot de passe incorrect.</p>
   </div>
@@ -120,7 +120,7 @@
 
   <!-- Script JS de vérification -->
   <script>
-    const PASSWORD = "monmotdepasse"; // ← Change ce mot de passe ici
+    const PASSWORD = "CRELINK2025"; // ← Change ce mot de passe ici
 
     function checkPassword() {
       const input = document.getElementById('password-input').value;
