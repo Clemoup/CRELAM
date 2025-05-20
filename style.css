@@ -137,7 +137,7 @@ section {
 }
 
 section h2 {
-  border-bottom: 2px solid #0077b6;
+  /* border-bottom: 2px solid #0077b6; */
   padding-bottom: 0.3em;
   margin-bottom: 0.8em;
 }
