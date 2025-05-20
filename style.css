@@ -11,6 +11,8 @@ a {
   color: inherit;
 }
 
+
+
 /* --- HEADER --- */
 header {
   background: #0077b6;
@@ -37,6 +39,20 @@ header {
 .logo {
   height: 50px;
 }
+
+section.info-block {
+      padding: 3rem 2rem;
+      background: #ffffff;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    section.info-block h2 {
+      color: #1e3a8a;
+    }
 
 /* --- NAVIGATION --- */
 nav {
