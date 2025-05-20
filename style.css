@@ -13,7 +13,7 @@ a {
 
 /* --- HEADER --- */
 header {
-  background: #0077b6;
+  background: #4B2F46;
   color: white;
   padding: 0.5em 0;
 }
@@ -86,7 +86,7 @@ nav {
   .menu {
     display: none;
     flex-direction: column;
-    background: #0077b6;
+    background: #4B2F46;
     position: absolute;
     right: 0;
     top: 100%;
@@ -104,7 +104,7 @@ nav {
 }
 /* --- INFO BLOCK --- */
 .info.block {
-  background: #e3f2fd;
+  background: #E2EFDA;
   padding: 1.5em;
   border-radius: 12px;
   margin: 2em auto;
@@ -114,7 +114,7 @@ nav {
 
 .info.block h2 {
   margin-top: 0;
-  color: #0d47a1;
+  color: #7B3B95;
 }
 
 .info.block p {
@@ -176,7 +176,7 @@ section h2 {
 .btn {
   margin-top: auto;
   align-self: flex-start;
-  background: #0077b6;
+  background: #F2A372;
   color: white;
   padding: 0.5em 1em;
   border-radius: 5px;
@@ -185,14 +185,14 @@ section h2 {
 }
 
 .btn:hover {
-  background: #005f8a;
+  background: #ED7F3B;
 }
 
 /* --- FOOTER --- */
 footer {
   text-align: center;
   padding: 1em;
-  background: #023e8a;
+  background: #4B2F46;
   color: white;
   margin-top: 3em;
 }
