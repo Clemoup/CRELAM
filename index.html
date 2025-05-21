@@ -104,10 +104,11 @@
 </main>
 
 <footer>
-  <p>&copy; 2025 CRELINK</p>
+  <p>&copy; 2025 CRELINK - Plateforme CRELAM </p>
 </footer>
 
-<!-- Modale mot de passe -->
+
+ <!-- Modale mot de passe -->
 <div id="passwordModal" class="modal">
   <div class="modal-content">
     <h2>🔒 Accès réservé</h2>
@@ -121,8 +122,6 @@
   </div>
 </div>
 
-
-
 <script>
   const PASSWORD = "CRELINK2025";
 
@@ -131,28 +130,27 @@
     document.getElementById("passwordModal").style.display = "flex";
   });
 
- function checkPassword() {
-  const mdp = document.getElementById("passwordInput").value;
-  if (mdp === PASSWORD) {
-    window.location.href = "acces_ecole.html";
-  } else {
-    document.getElementById("errorMessage").innerText = "Mot de passe incorrect.";
+  function checkPassword() {
+    const mdp = document.getElementById("passwordInput").value;
+    if (mdp === PASSWORD) {
+      window.location.href = "acces_ecole.html";
+    } else {
+      document.getElementById("errorMessage").innerText = "Mot de passe incorrect.";
+    }
   }
-}
-
 
   function cancelAccess() {
-  document.getElementById('passwordModal').style.display = 'none';
-  document.getElementById('passwordInput').value = '';
-  document.getElementById('errorMessage').innerText = '';
-}
-window.onclick = function(event) {
-  const modal = document.getElementById('passwordModal');
-  if (event.target === modal) {
-    cancelAccess();
+    document.getElementById('passwordModal').style.display = 'none';
+    document.getElementById('passwordInput').value = '';
+    document.getElementById('errorMessage').innerText = '';
   }
-}
 
+  window.onclick = function(event) {
+    const modal = document.getElementById('passwordModal');
+    if (event.target === modal) {
+      cancelAccess();
+    }
+  }
 </script>
 
 </body>
