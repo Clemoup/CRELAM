@@ -191,13 +191,16 @@ section:not(.card-container):not(.info-section) {
 
 /* QR code taille exacte, sans fond ni bordure */
 .qr-code {
-  width: 2cm;
-  height: 2cm;
+  width: 2cm !important;
+  height: 2cm !important;
+  max-width: 2cm !important;
+  max-height: 2cm !important;
   object-fit: contain;
   background: transparent;
   border: none;
   display: block;
 }
+
 
 /* Bouton sans bordure ni surlignement */
 .btn {
