@@ -37,7 +37,9 @@
     }
   </style>
 </head>
-  
+
+  <button id="scrollTopBtn" title="Remonter en haut">⬆️</button>
+
 <body>
 
 <header>
@@ -173,6 +175,27 @@
       cancelAccess();
     }
   }
+
+  // Récupère le bouton
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+// Affiche le bouton après un scroll de 100px
+window.onscroll = function() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+
+// Au clic, remonte en haut doucement
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
 </script>
 
 </body>
