@@ -121,17 +121,18 @@
 
   document.getElementById("acces-ecole-link").addEventListener("click", function(e) {
     e.preventDefault();
-    document.getElementById("acces-ecole-form").style.display = "block";
+    document.getElementById("passwordModal").style.display = "block";
   });
 
-  function verifierMotDePasse() {
-    const mdp = document.getElementById("ecole-password").value;
-    if (mdp === PASSWORD) {
-      window.location.href = "acces_ecole.html";
-    } else {
-      document.getElementById("erreur-mdp").style.display = "block";
-    }
+ function checkPassword() {
+  const mdp = document.getElementById("passwordInput").value;
+  if (mdp === PASSWORD) {
+    window.location.href = "acces_ecole.html";
+  } else {
+    document.getElementById("errorMessage").innerText = "Mot de passe incorrect.";
   }
+}
+
 
   function cancelAccess() {
   document.getElementById('passwordModal').style.display = 'none';
