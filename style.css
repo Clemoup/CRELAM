@@ -241,22 +241,40 @@ footer {
   margin-top: 3em;
 }
 
-#passwordModal {
-  display: none; /* cacher par défaut */
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-  /* pour centrer le contenu, on met display:flex seulement quand on l’affiche */
-}
-
-.modal-content {
-  background: white;
-  padding: 1.5em;
-  border-radius: 10px;
-  max-width: 300px;
-  width: 90%;
-  text-align: center;
-}
+    /* --- MODALE MOT DE PASSE --- */
+    #passwordModal {
+      display: none; /* cachée par défaut */
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 1.5em;
+      border-radius: 10px;
+      max-width: 300px;
+      width: 90%;
+      text-align: center;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .modal-content button {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background: #4B2F46;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
