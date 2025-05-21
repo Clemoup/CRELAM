@@ -161,46 +161,38 @@ section:not(.card-container):not(.info-section) {
 .dispo-wrapper {
   padding: 2em;
 }
+.dispo-image-button-wrapper {
+  text-align: center;
+}
 
 .dispo-section {
-  background-color: #f6f3f8;
-  padding: 2em 1em;
+   padding: 2em 1em;
   margin: 3em auto;
 }
 
+
 .dispo-container {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2em;
+  justify-content: center;
+  padding: 2em 1em;
   max-width: 1100px;
   margin: auto;
 }
 
-.dispo-image-box {
-  flex: 1 1 300px;
-  background: white;
-  border-radius: 10px;
-  padding: 1em;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  align-items: center;
-  display : flex;
-  justify-content: center;
+.dispo-text {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.dispo-image-box img {
-  border-radius: 8px;
-   width: 2cm;
+.dispo-qrcode {
+  width: 2cm;
   height: 2cm;
   object-fit: contain;
   display: block;
-  margin-bottom: 1em;
-}
-
-.dispo-text {
-  flex: 1 1 400px;
-    max-width: 600px;
+  margin: 1em auto 1.5em auto;
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
 .dispo-text h2 {
@@ -280,6 +272,7 @@ section h2 {
   color: white;
   padding: 0.5em 1em;
   border-radius: 5px;
+  border : none;
   text-decoration: none;
   transition: background 0.3s;
 }
