@@ -247,10 +247,11 @@ footer {
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.5);
   z-index: 10000;
-  display: flex;
   justify-content: center;
   align-items: center;
+  /* pour centrer le contenu, on met display:flex seulement quand on l’affiche */
 }
+
 .modal-content {
   background: white;
   padding: 1.5em;
