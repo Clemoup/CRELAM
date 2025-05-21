@@ -102,13 +102,19 @@
 </footer>
 
 <!-- Mot de passe popup -->
-<div id="acces-ecole-form">
-  <h3>🔐 Accès réservé</h3>
-  <input type="password" id="ecole-password" placeholder="Mot de passe">
-  <br>
-  <button onclick="verifierMotDePasse()">Valider</button>
-  <p id="erreur-mdp" style="color: red; display: none;">Mot de passe incorrect.</p>
+<div id="passwordModal" class="modal">
+  <div class="modal-content">
+    <h2>🔒 Accès réservé</h2>
+    <p>Veuillez saisir le mot de passe pour accéder à l'espace école :</p>
+    <input type="password" id="passwordInput" placeholder="Mot de passe" />
+    <div class="modal-actions">
+      <button onclick="checkPassword()">Valider</button>
+      <button onclick="cancelAccess()">Annuler</button>
+    </div>
+    <p id="errorMessage" style="color: red;"></p>
+  </div>
 </div>
+
 
 <script>
   const PASSWORD = "CRELINK2025";
@@ -126,6 +132,19 @@
       document.getElementById("erreur-mdp").style.display = "block";
     }
   }
+
+  function cancelAccess() {
+  document.getElementById('passwordModal').style.display = 'none';
+  document.getElementById('passwordInput').value = '';
+  document.getElementById('errorMessage').innerText = '';
+}
+window.onclick = function(event) {
+  const modal = document.getElementById('passwordModal');
+  if (event.target === modal) {
+    cancelAccess();
+  }
+}
+
 </script>
 
 </body>
