@@ -183,10 +183,12 @@ section:not(.card-container):not(.info-section) {
 }
 
 .dispo-image-box img {
-  width: 100%;
-  height: auto;
   border-radius: 8px;
-  object-fit: cover;
+   width: 2cm;
+  height: 2cm;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1em;
 }
 
 .dispo-text {
