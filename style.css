@@ -156,6 +156,52 @@ section:not(.card-container):not(.info-section) {
   margin: 2em auto;
   padding: 0 1em;
 }
+/* --- Section disponibilités volontaires  --- */
+.dispo-section {
+  background-color: #f6f3f8;
+  padding: 2em 1em;
+  margin: 3em auto;
+}
+
+.dispo-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.dispo-image-box {
+  flex: 1 1 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.dispo-image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.dispo-text {
+  flex: 1 1 400px;
+}
+
+.dispo-text h2 {
+  margin-top: 0;
+}
+
+.dispo-text p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
 
 /* --- MAIN LAYOUT --- */
 main {
