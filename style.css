@@ -166,52 +166,60 @@ section:not(.card-container):not(.info-section) {
 
 .dispo-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 2em;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Colonne texte : largeur max raisonnable, flex-grow pour éviter débordement */
+/* Texte à gauche, prend tout l’espace possible sauf la colonne droite */
 .dispo-texte {
-  flex: 1 1 55%;
-  min-width: 250px; /* limite un peu la réduction trop forte */
+  flex: 1 1 auto;
+  min-width: 250px; /* limite pour écran petits */
+  max-width: 70%; /* pour éviter d’empiéter sur la colonne droite */
 }
 
-/* Colonne image + bouton : largeur max fixe pour ne pas exploser */
+/* Colonne droite fixe en largeur pour l’image + bouton */
 .dispo-cote-droit {
-  flex: 0 0 120px; /* largeur fixe suffisante pour 2cm image + bouton */
+  flex: 0 0 2.5cm; /* largeur fixe correspondant à l’image */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1em;
 }
 
-/* Taille fixe du QR code */
+/* QR code taille exacte, sans fond ni bordure */
 .qr-code {
-  width: 2.5cm;
-  height: 2.5cm;
+  width: 2cm;
+  height: 2cm;
   object-fit: contain;
+  background: transparent;
+  border: none;
+  display: block;
 }
 
+/* Bouton sans bordure ni surlignement */
 .btn {
-  background-color: #007BFF; /* ou ta couleur habituelle */
+  background-color: #F2A372;
   color: white;
-  padding: 0.75em 1.5em;
+  padding: 0.5em 1em;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1em;
+  cursor: pointer;
   display: inline-block;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
+  box-shadow: none; /* pas de surlignement */
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #ED7F3B;
 }
+
 
 /* --- MAIN LAYOUT --- */
 main {
