@@ -129,7 +129,7 @@ nav {
   min-height: auto; /* supprime les hauteurs inutiles */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .card h2 {
