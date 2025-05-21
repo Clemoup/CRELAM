@@ -178,12 +178,11 @@ section:not(.card-container):not(.info-section) {
   max-width: 70%; /* pour éviter d’empiéter sur la colonne droite */
 }
 
-/* Colonne droite fixe en largeur pour l’image + bouton */
 .dispo-cote-droit {
   flex: 1 1 33.33%;  /* Prend max 1/3 */
   display: flex;
   flex-direction: column;
-  align-items: right;
+  align-items: center;  /* centre horizontalement ;  OU flex-end si on veut coller à droite */*/
   gap: 1em;
 }
 
