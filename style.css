@@ -169,24 +169,29 @@ section:not(.card-container):not(.info-section) {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2em;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
+/* Colonne texte : largeur max raisonnable, flex-grow pour éviter débordement */
 .dispo-texte {
-  flex: 1 1 60%;
+  flex: 1 1 55%;
+  min-width: 250px; /* limite un peu la réduction trop forte */
 }
 
+/* Colonne image + bouton : largeur max fixe pour ne pas exploser */
 .dispo-cote-droit {
-  flex: 1 1 35%;
+  flex: 0 0 120px; /* largeur fixe suffisante pour 2cm image + bouton */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   gap: 1em;
 }
 
+/* Taille fixe du QR code */
 .qr-code {
-  width: 2cm;
-  height: 2cm;
+  width: 2.5cm;
+  height: 2.5cm;
   object-fit: contain;
 }
 
