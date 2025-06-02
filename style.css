@@ -142,12 +142,12 @@ nav {
 
 .card h2 {
   font-size: 1.1em;
-  /*margin-bottom: 0.5em;
+  /*margin-bottom: 0.5em; */
 }
 
 .card p {
   font-size: 0.95em;
-  /*margin-bottom: 0.8em;
+  /*margin-bottom: 0.8em; */
   line-height: 1.4;
 }
 
@@ -213,7 +213,7 @@ width: 100%;  /* pour prendre toute la largeur dispo */
   font-size: 1em;
   cursor: pointer;
   display: inline-block;
-  text-align: center;
+  text-align: right;
   transition: background-color 0.3s;
   box-shadow: none; /* pas de surlignement */
 }
