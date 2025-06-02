@@ -155,6 +155,12 @@ nav {
   align-self: flex-start; /* Aligne le paragraphe à gauche de sa propre carte */
 }
 
+/*Effet de relief sur le survol des encadrés */
+.card:hover {
+  transform: translateY(-5px); /* Déplace légèrement la carte vers le haut */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Ajoute une ombre plus prononcée */
+}
+
 /* --- BOUTON --- */
 .btn {
   margin-top: auto; /* Pousse le bouton vers le bas */
