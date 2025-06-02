@@ -150,8 +150,9 @@ nav {
 
 .card p {
   font-size: 0.95em;
-  /* margin-bottom: 0.8em; Suppression du commentaire si vous souhaitez cette marge */
+  /* margin-bottom: 0.8em; */
   line-height: 1.4;
+  align-self: flex-start; /* Aligne le paragraphe à gauche de sa propre carte */
 }
 
 /* --- BOUTON --- */
