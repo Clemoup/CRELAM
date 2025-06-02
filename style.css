@@ -17,11 +17,13 @@ header {
   color: white;
   padding: 0.5em 0;
 }
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -42,6 +44,7 @@ header {
   height: 40px;
   width: auto;
 }
+
 h1 {
   font-size: 1.5rem;
   margin: 0;
@@ -81,42 +84,46 @@ nav {
 #menu-toggle {
   display: none;
 }
+
 /* --- n'affiche qu'un bloc par ligne pour les petits écrans --- */
 @media (max-width: 768px) {
-        .menu {
-          display: none;
-          flex-direction: column;
-          background: #4B2F46;
-          position: absolute;
-          right: 0;
-          top: 100%;
-          width: 150px;
-        }
-      
-        #menu-toggle:checked + .menu-icon + .menu {
-          display: flex;
-        }
-        .menu-icon {
-          display: block;
-          color: white;
-        }
-        .card-container {
-          flex-direction: column;
-          gap: 1em;
-        }
-      
-        .card {
-          flex: 1 1 100%;
-        }
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: #4B2F46;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 150px;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+    color: white;
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
 }
+
 /* --- CARDS --- */
 .card-container {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1em; /* Utilisation de '1em' pour la cohérence, l'autre valeur était '20px' */
   margin: 2em auto;
-  max-width: 900px;
+  max-width: 900px; /* Utilisation de '900px' pour la cohérence, l'autre valeur était '1100px' */
   align-items: stretch; /* Étire les cartes à la même hauteur */
 }
 
@@ -133,22 +140,40 @@ nav {
   justify-content: space-between; /* Pousse le dernier élément (bouton) vers le bas */
   align-items: flex-end; /* Aligne les éléments sur l'axe transversal (ici, à droite) */
 }
-.card .btn {
-  align-self: flex-end; /* Aligne le bouton à droite de sa propre carte */
-  padding: 0.4em 0.8em;
-  font-size: 0.9em;
-  margin-top: auto; /* Pousse le bouton vers le bas */
-}
 
 .card h2 {
   font-size: 1.1em;
-  /*margin-bottom: 0.5em; */
+  margin-top: 0; /* Ajout pour la cohérence */
+  /* margin-bottom: 0.5em; Suppression du commentaire si vous souhaitez cette marge */
 }
 
 .card p {
   font-size: 0.95em;
-  /*margin-bottom: 0.8em; */
+  /* margin-bottom: 0.8em; Suppression du commentaire si vous souhaitez cette marge */
   line-height: 1.4;
+}
+
+/* --- BOUTON --- */
+.btn {
+  margin-top: auto; /* Pousse le bouton vers le bas */
+  align-self: flex-end; /* Aligne le bouton à droite de sa propre carte */
+  background-color: #F2A372;
+  color: white;
+  padding: 0.5em 1em; /* Utilisation de '0.5em 1em' pour la cohérence */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center; /* Correction pour l'alignement du texte du bouton */
+  transition: background-color 0.3s;
+  box-shadow: none; /* pas de surlignement */
+}
+
+.btn:hover {
+  background-color: #ED7F3B;
 }
 
 /* --- ALIGNEMENT DES SECTIONS SIMPLES --- */
@@ -158,10 +183,10 @@ section:not(.card-container):not(.info-section) {
   margin: 2em auto;
   padding: 0 1em;
 }
-/* --- Section disponibilités volontaires --- */
 
+/* --- Section disponibilités volontaires --- */
 .dispo-section {
-  max-width: 1100px; /* --- idem que MAIN --- */
+  max-width: 1100px;
   margin: 2em auto;
   padding: 0 1em;
 }
@@ -169,22 +194,21 @@ section:not(.card-container):not(.info-section) {
 .dispo-container {
   display: flex;
   gap: 2em;
-width: 100%;  /* pour prendre toute la largeur dispo */
-  box-sizing: border-box;  /* pour éviter débordements */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Texte à gauche, prend tout l’espace possible sauf la colonne droite */
 .dispo-texte {
-  flex: 2 1 0; /* Prend environ 2/3 de la largeur dispo */
-  min-width: 250px; /* limite pour écran petits */
-  max-width: 70%; /* pour éviter d’empiéter sur la colonne droite */
+  flex: 2 1 0;
+  min-width: 250px;
+  max-width: 70%;
 }
 
 .dispo-cote-droit {
-  flex: 1 1 33.33%;  /* Prend max 1/3 */
+  flex: 1 1 33.33%;
   display: flex;
   flex-direction: column;
-  align-items: center;  /* centre horizontalement ;  OU flex-end si on veut coller à droite */*/
+  align-items: center;
   gap: 1em;
 }
 
@@ -200,29 +224,6 @@ width: 100%;  /* pour prendre toute la largeur dispo */
   display: block;
 }
 
-
-/* Bouton sans bordure ni surlignement */
-.btn {
-  background-color: #F2A372;
-  color: white;
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1em;
-  cursor: pointer;
-  display: inline-block;
-  text-align: right;
-  transition: background-color 0.3s;
-  box-shadow: none; /* pas de surlignement */
-}
-
-.btn:hover {
-  background-color: #ED7F3B;
-}
-
-
 /* --- MAIN LAYOUT --- */
 main {
   max-width: 1100px;
@@ -236,67 +237,8 @@ section {
 }
 
 section h2 {
-  /* border-bottom: 2px solid #0077b6; */
   padding-bottom: 0.3em;
   margin-bottom: 0.8em;
-}
-
-/* --- CARDS / BLOCS --- */
-
-.card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: auto;
-  padding: 1em;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5em;
-  justify-content: center;
-}
-
-.card {
-  flex: 1 1 300px;
-  background: white;
-  border-radius: 12px;
-  padding: 1.2em;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 280px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.card h2 {
-  margin-top: 0;
-}
-
-/* --- BOUTON --- */
-.btn {
-  margin-top: auto;
-  align-self: flex-start;
-  background: #F2A372;
-  color: white;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  border : none;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #ED7F3B;
 }
 
 /* --- FOOTER --- */
@@ -308,40 +250,47 @@ footer {
   margin-top: 3em;
 }
 
-    /* --- MODALE MOT DE PASSE --- */
-    #passwordModal {
-      display: none; /* cachée par défaut */
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 10000;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: white;
-      padding: 1.5em;
-      border-radius: 10px;
-      max-width: 300px;
-      width: 90%;
-      text-align: center;
-    }
-    .modal-content input {
-      width: 100%;
-      padding: 0.5em;
-      margin-top: 1em;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .modal-content button {
-      margin-top: 1em;
-      padding: 0.5em 1em;
-      background: #4B2F46;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+/* --- MODALE MOT DE PASSE --- */
+#passwordModal {
+  display: none; /* cachée par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  max-width
+      : 300px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  background: #4B2F46;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
