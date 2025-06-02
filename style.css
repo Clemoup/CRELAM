@@ -133,7 +133,6 @@ nav {
   justify-content: space-between; /* Pousse le dernier élément (bouton) vers le bas */
   align-items: flex-end; /* Aligne les éléments sur l'axe transversal (ici, à droite) */
 }
-
 .card .btn {
   align-self: flex-end; /* Aligne le bouton à droite de sa propre carte */
   padding: 0.4em 0.8em;
@@ -143,19 +142,13 @@ nav {
 
 .card h2 {
   font-size: 1.1em;
-  margin-bottom: 0.5em;
+  /*margin-bottom: 0.5em;
 }
 
 .card p {
   font-size: 0.95em;
-  margin-bottom: 0.8em;
+  /*margin-bottom: 0.8em;
   line-height: 1.4;
-}
-
-.card .btn {
-  align-self: flex-start;
-  padding: 0.4em 0.8em;
-  font-size: 0.9em;
 }
 
 /* --- ALIGNEMENT DES SECTIONS SIMPLES --- */
