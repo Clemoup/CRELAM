@@ -83,31 +83,31 @@ nav {
 }
 /* --- n'affiche qu'un bloc par ligne pour les petits écrans --- */
 @media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    background: #4B2F46;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 150px;
-  }
-
-  #menu-toggle:checked + .menu-icon + .menu {
-    display: flex;
-  }
-  .menu-icon {
-    display: block;
-    color: white;
-  }
-  .card-container {
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  .card {
-    flex: 1 1 100%;
-  }
+        .menu {
+          display: none;
+          flex-direction: column;
+          background: #4B2F46;
+          position: absolute;
+          right: 0;
+          top: 100%;
+          width: 150px;
+        }
+      
+        #menu-toggle:checked + .menu-icon + .menu {
+          display: flex;
+        }
+        .menu-icon {
+          display: block;
+          color: white;
+        }
+        .card-container {
+          flex-direction: column;
+          gap: 1em;
+        }
+      
+        .card {
+          flex: 1 1 100%;
+        }
 }
 /* --- CARDS --- */
 .card-container {
@@ -117,6 +117,7 @@ nav {
   gap: 1em;
   margin: 2em auto;
   max-width: 900px;
+  align-items: stretch; /* Étire les cartes à la même hauteur */
 }
 
 .card {
@@ -129,7 +130,7 @@ nav {
   min-height: auto; /* supprime les hauteurs inutiles */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Pousse le dernier élément (bouton) vers le bas */
 }
 
 .card h2 {
