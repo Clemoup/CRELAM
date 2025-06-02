@@ -143,7 +143,8 @@ nav {
 
 .card h2 {
   font-size: 1.1em;
-  margin-top: 0; /* Ajout pour la cohérence */
+  margin-top: 0;
+  align-self: flex-start; /* Aligne le titre à gauche de sa propre carte */
   /* margin-bottom: 0.5em; Suppression du commentaire si vous souhaitez cette marge */
 }
 
