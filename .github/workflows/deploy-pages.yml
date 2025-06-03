@@ -3,13 +3,22 @@ name: Déploiement GitHub Pages CRELAM
 
 # Quand le workflow doit-il s'exécuter ?
 on:
-  # Déclencher le workflow lors d'un push sur la branche 'main'
-  push:
-    branches:
-      - main # Assurez-vous que c'est bien votre branche principale
+# Supprimez ou commentez la section 'push' car nous allons déclencher manuellement
+  # push:
+  #   branches:
+  #     - main
 
   # Permettre de lancer le workflow manuellement depuis l'onglet "Actions"
   workflow_dispatch:
+  inputs:
+      fileName:
+        description: 'Nom du fichier HTML à déployer'
+        required: true
+        type: string
+      fileContent:
+        description: 'Contenu du fichier HTML (Base64)'
+        required: true
+        type: string
 
 # Gérer la concurrence : permet d'éviter les annulations automatiques.
 # Si un nouveau push arrive alors qu'une exécution est en cours pour cette branche,
@@ -26,7 +35,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest # Environnement d'exécution
     permissions:
-      contents: read # Permission pour lire le contenu du dépôt
+      contents: write # Permission pour lire le contenu du dépôt
       pages: write # Permission pour déployer sur GitHub Pages
       id-token: write # Permission requise pour l'authentification OIDC de deploy-pages@v4
 
@@ -38,6 +47,12 @@ jobs:
           fetch-depth: 0 # Important pour des dépôts plus complexes avec l'historique
 
       # Étape 2: Configurer Pages (nécessaire pour les actions de déploiement)
+      - name: Create or Update HTML file
+        run: |
+          echo "${{ inputs.fileContent }}" | base64 -d > "${{ inputs.fileName }}"
+          # Crée le fichier depuis le contenu base64 reçu
+        shell: bash
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
