@@ -1,0 +1,54 @@
+# Nom du workflow tel qu'il apparaîtra dans l'onglet "Actions"
+name: Déploiement GitHub Pages CRELAM
+
+# Quand le workflow doit-il s'exécuter ?
+on:
+  # Déclencher le workflow lors d'un push sur la branche 'main'
+  push:
+    branches:
+      - main # Assurez-vous que c'est bien votre branche principale
+
+  # Permettre de lancer le workflow manuellement depuis l'onglet "Actions"
+  workflow_dispatch:
+
+# Gérer la concurrence : permet d'éviter les annulations automatiques.
+# Si un nouveau push arrive alors qu'une exécution est en cours pour cette branche,
+# le nouveau push attendra que l'ancien soit terminé.
+# Si vous voulez que le plus récent annule l'ancien, ajoutez 'cancel-in-progress: true'
+# mais ce n'est pas le comportement que vous voulez ici pour éviter les annulations.
+concurrency:
+  group: pages
+  # cancel-in-progress: false # Par défaut false si non spécifié, mais on peut le mettre pour être explicite
+
+# Les différents jobs (tâches) qui composent ce workflow
+jobs:
+  # Le job de construction et de déploiement
+  build-and-deploy:
+    runs-on: ubuntu-latest # Environnement d'exécution
+
+    steps:
+      # Étape 1: Cloner le dépôt
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important pour des dépôts plus complexes avec l'historique
+
+      # Étape 2: Configurer Pages (nécessaire pour les actions de déploiement)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Étape 3: Uploader l'artefact (votre site HTML)
+      # 'path' doit pointer vers le dossier qui contient vos fichiers HTML à déployer
+      # Si vos fichiers HTML sont directement à la racine du dépôt, utilisez '.'
+      # Si ils sont dans un sous-dossier 'site' (par exemple), utilisez 'site'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: . # <-- Très important : remplacez '.' par le chemin de votre dossier HTML si ce n'est pas la racine
+
+      # Étape 4: Déployer l'artefact vers GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Jetons nécessaires pour le déploiement
