@@ -25,6 +25,10 @@ jobs:
   # Le job de construction et de déploiement
   build-and-deploy:
     runs-on: ubuntu-latest # Environnement d'exécution
+    permissions:
+      contents: read # Permission pour lire le contenu du dépôt
+      pages: write # Permission pour déployer sur GitHub Pages
+      id-token: write # Permission requise pour l'authentification OIDC de deploy-pages@v4
 
     steps:
       # Étape 1: Cloner le dépôt
@@ -50,5 +54,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Jetons nécessaires pour le déploiement
+       # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Cette ligne n'est plus nécessaire avec le bloc permissions ci-dessus
