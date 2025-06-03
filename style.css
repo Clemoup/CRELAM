@@ -185,7 +185,7 @@ nav {
 }
 
 /* --- ALIGNEMENT DES SECTIONS SIMPLES --- */
-section:not(.card-container):not(.info-section) {
+section:not(.card-container) {
   width: 100%;
   max-width: 900px;
   margin: 2em auto;
