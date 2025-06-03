@@ -42,7 +42,7 @@ jobs:
       # Si vos fichiers HTML sont directement à la racine du dépôt, utilisez '.'
       # Si ils sont dans un sous-dossier 'site' (par exemple), utilisez 'site'
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: . # <-- Très important : remplacez '.' par le chemin de votre dossier HTML si ce n'est pas la racine
 
